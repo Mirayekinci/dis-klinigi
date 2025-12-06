@@ -1,2 +1,2 @@
-# dis-klinik-frontend
+# dis-klinigi
 
