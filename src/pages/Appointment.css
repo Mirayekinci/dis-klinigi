@@ -1,0 +1,364 @@
+.appointment-container {
+  max-width: 950px;
+  margin: 30px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  text-align: left;
+}
+
+.stepper-header {
+  padding: 25px 0;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.step {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #999;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.step-circle {
+  width: 36px;
+  height: 36px;
+  background: #f0f0f0;
+  color: #666;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 3px solid #fff;
+  transition: all 0.3s;
+}
+
+.step.active { color: #1e88e5; }
+.step.active .step-circle {
+  background: #1e88e5;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+}
+
+.wizard-body {
+  padding: 40px;
+  min-height: 400px;
+}
+
+h3 { margin-top: 0; color: #333; font-weight: 600; margin-bottom: 25px; }
+
+.tedavi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tedavi-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s;
+}
+
+.tedavi-card:hover {
+  border-color: #1e88e5;
+  background: #f8fbff;
+  transform: translateX(5px);
+}
+
+.tedavi-time {
+  font-size: 0.9rem;
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-back {
+  background: none; border: none; color: #555; cursor: pointer;
+  display: flex; align-items: center; gap: 5px; font-weight: 500;
+}
+.btn-back:hover { color: #1e88e5; }
+
+.filter-info .selected-badge {
+  background: #e3f2fd; color: #1565c0; padding: 6px 12px;
+  border-radius: 20px; font-size: 0.9rem; font-weight: 600;
+}
+
+.date-navigation {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-btn {
+  background: #f9f9f9;
+  border: none;
+  width: 40px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.date-input {
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  color: #333;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.date-input:focus {
+  box-shadow: none;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 220px repeat(5, 1fr);
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.grid-head {
+  background: #f9f9f9; padding: 15px 5px; text-align: center;
+  border-bottom: 1px solid #eee; border-right: 1px solid #eee;
+  font-size: 0.9rem; color: #555;
+}
+.grid-head strong { display: block; color: #333; margin-bottom: 4px; }
+.grid-head.holiday { background: #fff5f5; color: #d32f2f; }
+.grid-head.holiday strong { color: #c62828; }
+
+.doctor-col {
+  padding: 20px; border-bottom: 1px solid #eee; border-right: 1px solid #eee;
+  display: flex; align-items: center; gap: 12px; background: #fff;
+}
+.avatar {
+  width: 42px; height: 42px; background: #e1f5fe; color: #0288d1;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: bold;
+}
+.doc-title { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+.doc-name { font-size: 0.9rem; font-weight: 700; color: #333; }
+
+.slot-col {
+  border-bottom: 1px solid #eee; border-right: 1px solid #eee;
+  height: 180px; padding: 5px; background: #fff;
+}
+
+.scrollable-slots {
+  height: 100%; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 6px; padding-right: 2px;
+}
+
+.scrollable-slots::-webkit-scrollbar { width: 4px; }
+.scrollable-slots::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+.time-chip {
+  padding: 6px; border: 1px solid #e0e0e0; background: #fff;
+  border-radius: 6px; font-size: 0.8rem; cursor: pointer; transition: 0.2s;
+}
+.time-chip:hover { border-color: #1e88e5; color: #1e88e5; }
+
+.time-chip.full { 
+  background: #f5f5f5; 
+  color: #ccc; 
+  text-decoration: line-through; 
+  cursor: not-allowed; 
+  border-color: #f0f0f0;
+}
+
+.time-chip.available {
+  background: #fff;
+  color: #333;
+}
+.time-chip.available:hover {
+  background: #1e88e5;
+  color: #fff;
+  border-color: #1e88e5;
+}
+
+.no-doctor-warning {
+  grid-column: 1 / -1; padding: 30px; text-align: center; color: #d32f2f;
+  background: #ffebee; margin: 10px; border-radius: 8px;
+}
+
+.summary-box {
+  background: #f8fbff; border: 1px dashed #90caf9; border-radius: 12px;
+  padding: 40px; text-align: center; max-width: 500px; margin: 0 auto;
+}
+.check-icon { font-size: 3rem; color: #4caf50; margin-bottom: 15px; }
+.summary-card {
+  background: #fff; padding: 20px; border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: left;
+}
+.s-row { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #f9f9f9; padding-bottom: 8px; }
+.btn-confirm {
+  background: #1e88e5; color: #fff; border: none; padding: 12px 30px;
+  border-radius: 8px; font-size: 1rem; cursor: pointer; width: 100%;
+}
+.btn-text { background: none; border: none; color: #777; margin-top: 10px; cursor: pointer; }
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.nav-btn:disabled:hover {
+  background: #f9f9f9;
+  color: #555;
+}
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background: #fdfdfd;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.my-appointments-btn {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #bbdefb;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+.my-appointments-btn:hover {
+  background-color: #bbdefb;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  background: #f9fafb;
+}
+.modal-header h3 { margin: 0; font-size: 1.1rem; }
+
+.close-btn {
+  background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #888;
+}
+
+.modal-body {
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.randevu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.r-info { display: flex; flex-direction: column; gap: 3px; }
+.r-info strong { color: #333; }
+.r-info span { font-size: 0.9rem; color: #666; }
+.r-info small { font-size: 0.85rem; color: #888; }
+
+.cancel-btn {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.cancel-btn:hover {
+  background: #ffcdd2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

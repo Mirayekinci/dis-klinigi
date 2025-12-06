@@ -1,0 +1,102 @@
+.doctors-page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.doctors-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.doctors-header h1 {
+  color: #005691;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.doctors-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.doctor-card {
+  background: #ffffff;
+  border: 1px solid #eef2f5;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 86, 145, 0.1);
+  border-color: #dbeafe;
+}
+
+.doc-avatar {
+  width: 90px;
+  height: 90px;
+  background-color: #e3f2fd;
+  color: #005691;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 2px #bbdefb;
+}
+
+/* BİLGİLER */
+.doc-info h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.doc-title {
+  display: inline-block;
+  background-color: #f0f7ff;
+  color: #005691;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+}
+
+.doc-specialties {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+  width: 100%;
+}
+
+.doc-specialties strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.doc-specialties p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
